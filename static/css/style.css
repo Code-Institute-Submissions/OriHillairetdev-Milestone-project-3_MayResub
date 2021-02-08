@@ -1,0 +1,179 @@
+body{
+    font-family: 'Ubuntu', sans-serif;
+}
+.footer{
+    line-height: 1rem;
+    font-size: 1rem;
+    text-align: center;
+    background-color: #6D929B;
+    padding: 1rem;
+    color: #F5FAFA;
+}
+
+/*  nav */
+/* change the nav background color */
+.bg-light {
+    background-color: #6D929B!important;
+   
+}
+/* change text color */
+.navbar-light .navbar-brand  {
+    color: #F5FAFA;
+}
+.nav-item{
+    color: #F5FAFA!important;
+}
+.nav-item:hover {
+    color: #000!important;
+}
+
+/* page intro */
+
+.jumbotron{
+    background-image: url('../img/books-.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #6D929B;
+    font-weight: bold;
+    border-radius: .5rem;  
+}
+.lead{
+    margin-right: 8%;
+}
+
+.searchbar{
+   
+    background: transparent;
+    border-radius: .5rem;
+    color: #6D929B; 
+    font-weight: bold;   
+}
+.searchbutton{
+    opacity: .7;
+    border-radius: .3rem;    
+}
+
+/* card styling */
+.card{
+    color: #6D929B;
+    font-size: 1rem;
+    border-color: #E8D0A9;
+    border-radius: .5rem;
+}
+.card-header{
+    border-color: #E8D0A9;
+    background-color: #C1DAD6;
+}
+.review-title{
+    color: #6D929B;
+
+}
+.btn-info{
+    background-color: #6D929B;
+}
+.btn{
+    border-color: #E8D0A9;
+    font-size: .75rem;
+    border-radius: .5rem
+}
+.btn:hover {
+    background-color: #E8D0A9;
+    border-color: #6D929B;
+}
+hr{
+    border-color: #E8D0A9;
+}
+.fa {
+    color: #E8D0A9;
+    font-size: 1.5rem;
+}
+.fa-search{
+    color: #6D929B;
+    font-size: 1rem;
+}
+.fa-user-circle{
+    color: #6D929B;
+    font-size: 1rem;
+}
+.upvote{
+    color: #E8D0A9;
+    font-size: 1rem;
+    margin-top: .5rem;
+}
+.amazon{
+    font-size: .75rem;
+}
+
+/* Pagination links  */
+.pagination-sm .page-item:last-child .page-link {
+    border-top-right-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+}
+.pagination-sm .page-item:first-child .page-link {
+    border-top-left-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+}
+
+/* delete modal */
+.modal-content{
+    color: #6D929B;
+    background-color: #fff;
+    border-radius: .5rem;
+}
+.modal-header{
+    border-bottom-color: #E8D0A9;
+}
+.modal-footer{
+    border-top-color: #E8D0A9;
+}
+
+/* error pages */
+
+.error-header{
+    font-size: 5rem;
+    font-weight: bold;
+    color: #6D929B;
+}
+.error-content{
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #6D929B;
+}
+.other-error-content{
+    font-size: 2em;
+    font-weight: bold;
+    color: #6D929B;
+}
+
+/* about page */
+
+.about-header{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #6D929B;
+}
+.about-content{
+    font-size: 1rem;
+    font-weight: bold;
+    color: #6D929B;
+}
+
+
+/* media queries */
+
+@media (min-width: 576px) { 
+    .lead{
+        margin-right: 25%;
+    }
+ }
+
+@media (min-width: 768px) { 
+    .lead{
+        margin-right: 33%;
+    }
+ }
+
+
+
+
+

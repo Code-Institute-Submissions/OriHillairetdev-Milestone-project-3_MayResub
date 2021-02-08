@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block content%}
+
+
+<div class="card mb-4">
+    <div class="card-header reviewer"><span class="review-title "><strong>User:</strong></span> {{ user.username }} 
+    </div>
+    <div class="card-body">
+      <!--message user if they have no reivews-->
+        {% if count == 0 %}
+        <strong>You currently have no reviews</strong>
+        {% endif %}
+        <!--display all reviews owned by user -->
+        {% for review in reviews %}
+        <div class="row mb-4">
+
+            <div class="col-12 col-sm-6"><span class="text-capitalize"> {{review.book_title }} by {{ review.author}}
+
+                </span>
+            </div>
+            <!--link to view full reivew-->
+            <div class="col-12 col-sm-6">
+                <a class="btn btn-info" target="_blank" href=" {{ url_for('review', id=review._id ) }} ">View Review</a>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+      <!--button to delete a profile will show modal with warning-->
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete Profile </button>
+    </div>
+</div>
+ <!-- Modal for delete a profile tp shpow user a waring before confirming profile deletion-->
+ <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-danger" id="deleteModalLabel"><strong>Delete Profile - Warning!!</strong></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p class="text-danger">You are about to delete your entire profile </strong></span></p>
+              <p class="text-danger"><strong>Are you sure? This will remove all reviews you have posted also.</strong></p>
+              <p class="text-danger">You cannot retrieve the details of these reviews once deleted.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+              <!--deleting profile-->
+              <a href=" {{ (url_for('delete_profile', id=user._id )) }} " class="btn btn-danger" title="Delete Profile" >Delete Profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+{% endblock %}

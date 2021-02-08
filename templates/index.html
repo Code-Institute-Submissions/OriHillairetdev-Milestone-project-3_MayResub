@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block content%}
+<!-- Using card to diplay each review summary -->
+{% for review in reviews %}
+<!-- looping through mongoaDB collection and displaying content in bootstrap cards-->
+<div class="card mb-4">
+    <div class="card-header"><span class="review-title "><strong>Reviewed By:</strong></span> 
+        <strong><i class="fa fa-user-circle" aria-hidden="true"></i> </strong>
+        <span> {{ review.username}} </span></div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12 col-md-4"><span class="review-title "><strong>Author:</strong></span> <span
+                    class="text-capitalize"> {{ review.author}} </span></div>
+            <div class="col-12 col-md-4"><span class="review-title "><strong>Book Title:</strong></span> <span
+                    class="text-capitalize"> {{ review.book_title }}</span></div>
+            <div class="col-12 col-md-4"><span class="review-title"><strong>Book Category:</strong></span> <i
+                    class="{{ review.icon}}" aria-hidden="true"></i> <span class="text-capitalize"> {{ review.category}}
+                </span> </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-12"><span class="review-title text-capitalize"><strong>Book
+                        Summary:</strong></span><br><br>{{ review.summary }}</div>
+
+        </div>
+        <hr />
+        <div class="row">
+                <!-- link to see full review -->
+            <div class="col-md-10"><a class="btn btn-info" title="View Review"
+                    href=" {{ url_for('review', id=review._id ) }} ">View Review</a></div>
+            <div class="col-md-2"><span class="review-title">Bites:</span> <span
+                    class="upvote">+{{ review.upvote }}</span></div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+<!--  pagination -->
+<!--requst.args.get function is used in the search route to keep track of offset and current page-->
+<ul class="pagination pagination-sm justify-content-center">
+    {%if offset >0 %}
+     <!-- if offset is greater than 0 this means that the next button has been clicked previously so then show the previous button -->
+    <li class="page-item"><a class="page-link" title="Previous" href="{{url_for('index', current_page=current_page-1, offset=offset-page_limit   )}}">Previous</a></li>
+    {% endif %}
+    <!-- showing user current page of total pages -->
+    <li class="page-item disabled"><a class="page-link" href="#">Page {{ current_page}} of {{max_pages}}</a></li>
+    {% if current_page < max_pages  %}
+    <!-- if current page remains less than the maximum page count then show the next button-->
+    <li class="page-item"><a class="page-link" title="Next" href="{{url_for('index', current_page=current_page+1, offset=offset+page_limit  )}}">Next</a></li>
+    {% endif %}
+</ul>
+
+
+ {% endblock %}
