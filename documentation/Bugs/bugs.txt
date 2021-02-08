@@ -1,1 +1,1 @@
-Templates not auto updating when i moodify them
+Templates not auto updating when i modify them
