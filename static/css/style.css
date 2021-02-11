@@ -5,23 +5,23 @@ body{
     line-height: 1rem;
     font-size: 1rem;
     text-align: center;
-    background-color: rgb(63, 63, 63);
+    background-color: rgb(0, 0, 0);
     padding: 1rem;
-    color: #F5FAFA;
+    color: rgb(0, 0, 0);
 }
 
 /*  nav */
 /* change the nav background color */
 .bg-light {
-    background-color: #6D929B!important;
+    background-color: rgb(0, 0, 0)!important;
    
 }
 /* change text color */
 .navbar-light .navbar-brand  {
-    color: #F5FAFA;
+    color: rgb(0, 0, 0);
 }
 .nav-item{
-    color: #F5FAFA!important;
+    color: rgb(0, 0, 0)!important;
 }
 .nav-item:hover {
     color: #000!important;
@@ -33,7 +33,7 @@ body{
     background-image: url('../img/books-.png');
     background-repeat: no-repeat;
     background-size: cover;
-    color: rgb(63, 63, 63);
+    color: rgb(0, 0, 0);
     font-weight: bold;
     border-radius: .5rem;  
 }
@@ -45,7 +45,7 @@ body{
    
     background: transparent;
     border-radius: .5rem;
-    color: rgb(63, 63, 63); 
+    color: rgb(0, 0, 0); 
     font-weight: bold;   
 }
 .searchbutton{
@@ -55,48 +55,48 @@ body{
 
 /* card styling */
 .card{
-    color: rgb(63, 63, 63);
+    color: rgb(0, 0, 0);
     font-size: 1rem;
-    border-color: #E8D0A9;
+    border-color: rgb(0, 0, 0);
     border-radius: .5rem;
 }
 .card-header{
-    border-color: #E8D0A9;
-    background-color: #C1DAD6;
+    border-color: rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
 }
 .review-title{
-    color: rgb(63, 63, 63);
+    color: rgb(0, 0, 0);
 
 }
 .btn-info{
-    background-color: rgb(63, 63, 63);
+    background-color: rgb(0, 0, 0);
 }
 .btn{
-    border-color: #E8D0A9;
+    border-color: rgb(0, 0, 0);
     font-size: .75rem;
     border-radius: .5rem
 }
 .btn:hover {
-    background-color: #E8D0A9;
-    border-color: rgb(63, 63, 63);
+    background-color: rgb(0, 0, 0);
+    border-color: rgb(0, 0, 0);
 }
 hr{
-    border-color: #E8D0A9;
+    border-color: rgb(7, 7, 7);
 }
 .fa {
-    color: #E8D0A9;
+    color: rgb(0, 0, 0);
     font-size: 1.5rem;
 }
 .fa-search{
-    color: rgb(63, 63, 63);
+    color: rgb(0, 0, 0);
     font-size: 1rem;
 }
 .fa-user-circle{
-    color: rgb(63, 63, 63);
+    color: rgb(0, 0, 0);
     font-size: 1rem;
 }
 .upvote{
-    color: #E8D0A9;
+    color: rgb(0, 0, 0);
     font-size: 1rem;
     margin-top: .5rem;
 }
@@ -116,15 +116,15 @@ hr{
 
 /* delete modal */
 .modal-content{
-    color: #6D929B;
-    background-color: #fff;
+    color: rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
     border-radius: .5rem;
 }
 .modal-header{
-    border-bottom-color: #E8D0A9;
+    border-bottom-color: rgb(0, 0, 0);
 }
 .modal-footer{
-    border-top-color: #E8D0A9;
+    border-top-color: rgb(0, 0, 0);
 }
 
 /* error pages */
@@ -132,17 +132,17 @@ hr{
 .error-header{
     font-size: 5rem;
     font-weight: bold;
-    color: rgb(63, 63, 63);
+    color: rgb(8, 8, 8);
 }
 .error-content{
     font-size: 1.2em;
     font-weight: bold;
-    color: rgb(63, 63, 63);
+    color: rgb(0, 0, 0);
 }
 .other-error-content{
     font-size: 2em;
     font-weight: bold;
-    color: rgb(63, 63, 63);
+    color: rgb(0, 0, 0);
 }
 
 /* about page */
@@ -150,12 +150,12 @@ hr{
 .about-header{
     font-size: 2rem;
     font-weight: bold;
-    color: rgb(63, 63, 63);
+    color: rgb(0, 0, 0);
 }
 .about-content{
     font-size: 1rem;
     font-weight: bold;
-    color: rgb(63, 63, 63);
+    color: rgb(10, 10, 10);
 }
 
 

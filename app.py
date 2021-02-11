@@ -561,7 +561,7 @@ def search():
 def bad_request(e):
     """Route for handling 400 errors"""
 
-    return render_template('400.html', title='Oopps Somethings wrong!')
+    return render_template('400.html', title='Oops Somethings wrong!')
 
 
 @app.errorhandler(404)
@@ -575,7 +575,7 @@ def page_not_found(e):
 def server_error(e):
     """Route for handling 500 errors"""
 
-    return render_template('500.html', title='Oopps Somethings wrong!')
+    return render_template('500.html', title='Oops Somethings wrong!')
 
 
 def create_amazon_search(book):
