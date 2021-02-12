@@ -11,6 +11,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
 # passing mongodb uri via environment
+SECRET_KEY = os.urandom(32)
+app.config['SECRET_KEY'] = SECRET_KEY
 app.config['MONGO_URI'] = "mongodb://localhost:27017/myDatabase"
 app.config['DEBUG'] = True
 app.config['TEMPLATES_AUTO_RELOAD'] = True
@@ -54,7 +56,7 @@ def index():
 def review(id):
     ''' function to return a single record of the review db
      on the basis of the id of the item in the collection,
-     runs when 'view reeview' is clicked '''
+     runs when 'view review' is clicked '''
 
     one_review = mongo.db.reviews.find_one({'_id': ObjectId(id)})
     title = one_review['book_title']
@@ -618,4 +620,4 @@ def get_icon_class(cat):
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'), port=os.environ.get('PORT'),
-            debug=False)
+            debug=True)
