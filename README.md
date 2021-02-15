@@ -95,7 +95,7 @@ The site uses bootstrap 4 be responsive across devices, also media queries were 
 ### Wireframes
 
 WireFrames were created using Figma at recomendation of my tutor. https://www.figma.com/  
-they can be found here [desktop](/WireFrames/) 
+they can be found here [desktop](https://github.com/OriHillairetdev/Milestone-project-3/documentation/WireFrames) 
 The original design that was chosen was too complicated and whould have taken time away from Python and more difficult tasks the website was simplified multiple times insired by old blogs and review sites i made it much simpler. it shares simalr designs as forums.
 
   
