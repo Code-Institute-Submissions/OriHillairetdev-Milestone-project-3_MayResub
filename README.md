@@ -95,7 +95,7 @@ The site uses bootstrap 4 be responsive across devices, also media queries were 
 ### Wireframes
 
 WireFrames were created using Figma at recomendation of my tutor. https://www.figma.com/  
-they can be found here [desktop](https://github.com/OriHillairetdev/Milestone-project-3/documentation/WireFrames) 
+they can be found here [desktop](documentation/WireFrames) 
 The original design that was chosen was too complicated and whould have taken time away from Python and more difficult tasks the website was simplified multiple times insired by old blogs and review sites i made it much simpler. it shares simalr designs as forums.
 
   
@@ -205,12 +205,15 @@ Testing was done incrementaly and influnced the end result of the project.
   
 
 As this was my first major project in Python testing was slow and a lot of time was speant pouring over errors and hours pouring over youtube videos and tutorials
+i tested the python code with https://extendsclass.com/python-tester.html and came back with no syntax errors 
+CCS was tested with https://jigsaw.w3.org/css-validator/ there where 2 warnings but i have chosen to ignore these as they cause no problems
+the html validator https://validator.w3.org/ showed up multiple errors as the techincque to create templates was casuing flags these where ignored.
 
   
 
-When the project was fully completed i went through the below testing scenarios to further test the project.
+When the project was fully completed i went through the below testing scenarios to further test the project to make sure that it reached my goal.
 
-Link to WireFrames
+
   
 
 | Test | Expected |Passed |
