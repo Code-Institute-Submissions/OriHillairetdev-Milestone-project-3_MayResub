@@ -1,1 +1,2 @@
 Templates not auto updating when i modify them
+Website crashes when the search bar is used cause is unknown and not enough time to fix added to future features

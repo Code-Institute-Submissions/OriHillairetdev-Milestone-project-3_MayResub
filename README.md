@@ -1,5 +1,5 @@
 <h1  align="center">
-<a  href=""  target="_blank"><img  src="/documentation/Landingpage.png"  alt="Book Nook Screen"/></a>
+<a  href=""  target="_blank"><img  src="/static/img/Landingpage.png"  alt="Book Nook Screen"/></a>
 
 </h1>
 
