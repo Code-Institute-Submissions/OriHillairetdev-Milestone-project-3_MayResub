@@ -1,5 +1,15 @@
 body{
     font-family: 'Ubuntu', sans-serif;
+    
+}
+
+.background{
+     background-image: url('../img/background.jpg');
+    background-repeat: no-repeat;
+    width: auto; /*or your image's width*/
+    height: auto; /*or your image's height*/
+    margin: 0;
+    padding: 0;
 }
 .footer{
     line-height: 1rem;
@@ -30,10 +40,10 @@ body{
 /* page intro */
 
 .jumbotron{
-    background-image: url('../img/books-.png');
+    background-image: url('../img/background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-weight: bold;
     border-radius: .5rem;  
 }
