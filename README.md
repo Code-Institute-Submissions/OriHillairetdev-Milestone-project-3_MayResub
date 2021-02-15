@@ -30,10 +30,9 @@ This Project is for milestone 3 python and data centric design
 3.  [**Database**](#database)
 4.  [**Technologies used**](#technologies-used)
 5.  [**Testing**](#testing)
-6.  [**Coding Notes**](#coding-notes)
-7.  [**Deployment**](#deployment)
-8.  [**Acknowledgements**](#acknowledgements)
-9.  [**Disclaimer**](#disclaimer)
+6.  [**Deployment**](#deployment)
+7.  [**Acknowledgements**](#acknowledgements)
+8.  [**Disclaimer**](#disclaimer)
 
   
 ## UX
@@ -96,7 +95,7 @@ The site uses bootstrap 4 be responsive across devices, also media queries were 
 ### Wireframes
 
 WireFrames were created using Figma at recomendation of my tutor. https://www.figma.com/  
-they can be found here "" 
+they can be found here [desktop](/WireFrames/) 
 The original design that was chosen was too complicated and whould have taken time away from Python and more difficult tasks the website was simplified multiple times insired by old blogs and review sites i made it much simpler. it shares simalr designs as forums.
 
   
@@ -211,6 +210,7 @@ As this was my first major project in Python testing was slow and a lot of time 
 
 When the project was fully completed i went through the below testing scenarios to further test the project.
 
+Link to WireFrames
   
 
 | Test | Expected |Passed |
