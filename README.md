@@ -264,6 +264,7 @@ I personally used vscode on my local machine to develop the site using Python 3.
 
 ### Acknowledgements
 
+A lot of threads on Stackoverflow whos links are gone now helping me with code snipits and multiple guides on how to do certain vhunks of code
 Thanks to the people on slack for always posting usefull information
 thanks to the Codeinstitute templates
 and Thanks to my Mentor Precious Ljege for teaching me some tricks of the trade
