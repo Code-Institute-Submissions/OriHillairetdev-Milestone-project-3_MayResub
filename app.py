@@ -1,9 +1,8 @@
 import os
 import re
 import math
-from flask import (
-    Flask, flash, render_template,
-    redirect, request, session, url_for)
+from flask import Flask, render_template, redirect, request, url_for, \
+    session, flash, Markup 
 from flask_pymongo import pymongo, PyMongo
 from bson.objectid import ObjectId
 from forms import RegistrationForm, LoginForm, ReviewForm
