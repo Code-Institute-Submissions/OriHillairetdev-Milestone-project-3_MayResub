@@ -1,22 +1,23 @@
 import os
 import re
 import math
-from flask import Flask, render_template, redirect, request, url_for, \
-    session, flash, Markup
+from flask import (
+    Flask, flash, render_template,
+    redirect, request, session, url_for)
 from flask_pymongo import pymongo, PyMongo
 from bson.objectid import ObjectId
 from forms import RegistrationForm, LoginForm, ReviewForm
 from werkzeug.security import generate_password_hash, check_password_hash
+if os.path.exists("env.py"):
+    import env
 
 
 app = Flask(__name__)
 # passing mongodb uri via environment
-SECRET_KEY = os.urandom(32)
-app.config['SECRET_KEY'] = SECRET_KEY
-app.config['MONGO_URI'] = "mongodb://localhost:27017/myDatabase"
-app.config['DEBUG'] = True
-app.config['TEMPLATES_AUTO_RELOAD'] = True
-# creating mongo app
+app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
+app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
+app.secret_key = os.environ.get("SECRET_KEY")
+
 mongo = PyMongo(app)
 
 page_limit = 4
