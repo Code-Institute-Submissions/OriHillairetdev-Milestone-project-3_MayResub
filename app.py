@@ -48,8 +48,8 @@ def index():
     # calculating max pages needed to display all records
     # sort reviews by popularity (upvote)
 
-    reviews = mongo.db.reviews.find().sort('upvote',
-            pymongo.DESCENDING).limit(page_limit).skip(offset)
+    reviews = mongo.db.reviews.find().sort(
+        'upvote', pymongo.DESCENDING).limit(page_limit).skip(offset)
     return render_template(
         'index.html',
         reviews=reviews,
@@ -58,7 +58,7 @@ def index():
         current_page=current_page,
         offset=offset,
         max_pages=max_pages,
-        )
+    )
 
 
 @app.route('/review/<id>', methods=['GET', 'POST'])
@@ -94,9 +94,9 @@ def my_profile():
         # only let a logged in user edit their own profile page
 
         current_user = session['username']
-        flash('Hi "' + current_user + '". This is your profile '
-              + 'page. You can view a summary of your reviews and'
-              + ' delete your profile from here', 'success')
+        flash('Hi "' + current_user + '". This is your profile ' +
+              'page. You can view a summary of your reviews and' +
+              ' delete your profile from here', 'success')
 
         # finding user based on login session
 
@@ -148,7 +148,7 @@ def upvote(id):
     '''function to increase upvote by 1, runs when upvote icon is clicked'''
 
     mongo.db.reviews.find_one_and_update({'_id': ObjectId(id)},
-            {'$inc': {'upvote': 1}})
+                                         {'$inc': {'upvote': 1}})
     return redirect(url_for('review', id=id))
 
 
@@ -166,8 +166,8 @@ def register():
         # if a session currently exists notify user
         # don't let logged in user register and send to index
 
-        flash('You are already logged in on this device as  '
-              + session['username'], 'warning')
+        flash('You are already logged in on this device as  ' +
+              session['username'], 'warning')
         return redirect(url_for('index'))
     if form.validate_on_submit():
 
@@ -175,7 +175,7 @@ def register():
 
         users = mongo.db.users
         find_user = users.find_one({'username': request.form['username'
-                                   ]})
+                                                             ]})
 
         if find_user is None:
 
@@ -190,10 +190,10 @@ def register():
 
             # Notify new user succesfully registration and create a  session
 
-            flash('You have registered and are logged in as "'
-                  + form.username.data
-                  + '". You can remove your account by selecting "My Profile" '
-                   + ' from the top navigation menu', 'success')
+            flash('You have registered and are logged in as "' +
+                  form.username.data +
+                  '". You can remove your account by selecting "My Profile" ' +
+                  ' from the top navigation menu', 'success')
             session['username'] = request.form['username']
             session['logged'] = True
             return redirect(url_for('my_reviews'))
@@ -202,9 +202,11 @@ def register():
             # if username already exists in db, notify
 
             username = request.form['username']
-            flash('The username "' + username
-                  + '" already exists. Please try a different username'
-                  , 'warning')
+            flash(
+                'The username "' +
+                username +
+                '" already exists. Please try a different username',
+                'warning')
             return redirect(url_for('register'))
 
     # load registration form
@@ -225,8 +227,8 @@ def login():
 
         # don't let logged in user log in again and send to index
 
-        flash('You are already logged in on this device as  '
-              + session['username'], 'warning')
+        flash('You are already logged in on this device as  ' +
+              session['username'], 'warning')
         return redirect(url_for('index'))
 
     if form.validate_on_submit():
@@ -235,7 +237,7 @@ def login():
 
         users = mongo.db.users
         find_user = users.find_one({'username': request.form['username'
-                                   ]})
+                                                             ]})
         if find_user:  # if user is found in db
             password = form.password.data
             if check_password_hash(find_user['password'], password):
@@ -243,10 +245,10 @@ def login():
                 # if password entered matches whats in db for paticluar user
 
                 myreviews_link = \
-                    Markup(' Go to <a href="/myreviews">My Reviews</a>'
-                           + ' to view your reviews')
-                flash('You  are logged in as  "' + form.username.data
-                      + '" ' + myreviews_link, 'success')
+                    Markup(' Go to <a href="/myreviews">My Reviews</a>' +
+                           ' to view your reviews')
+                flash('You  are logged in as  "' + form.username.data +
+                      '" ' + myreviews_link, 'success')
                 session['username'] = request.form['username']
                 session['logged'] = True
                 return redirect(url_for('index'))
@@ -254,8 +256,8 @@ def login():
 
                 # if passwords dont match
 
-                flash('Your password is incorrect.'
-                      + ' Please log in again with correct details',
+                flash('Your password is incorrect.' +
+                      ' Please log in again with correct details',
                       'warning')
 
                 return redirect(url_for('login'))
@@ -264,9 +266,9 @@ def login():
             # if user not found in db
 
             register_link = Markup('<a href="/register">Register</a>')
-            flash('User "' + form.username.data
-                  + '" does not exist, please ' + register_link
-                  + ' if you do not already have a valid username',
+            flash('User "' + form.username.data +
+                  '" does not exist, please ' + register_link +
+                  ' if you do not already have a valid username',
                   'warning')
             return redirect(url_for('login'))
 
@@ -304,8 +306,8 @@ def my_reviews():
 
         # only let a logged in user edit thier own review page
 
-        flash('This is your reviews page. '
-              + 'View, edit and add your own reviews from here',
+        flash('This is your reviews page. ' +
+              'View, edit and add your own reviews from here',
               'success')
         current_user = session['username']
 
@@ -363,7 +365,7 @@ def add_review():
             'icon': icon,
             'upvote': 0,
             'username': session['username'],
-            })
+        })
         flash('Review added ', 'success')
 
         # send to my reviews template on successful add
@@ -421,7 +423,7 @@ def edit_review(id):
             'category': request.form['category'],
             'amazon': amazon_link,
             'icon': icon,
-            }})
+        }})
 
         flash('Review Updated ', 'success')
 
@@ -453,8 +455,8 @@ def delete_review(id):
     # if a user trys to go to edit review that they don't own
 
     if one_review['username'] != session['username']:
-        flash('You do not own this review and cannot delete it.'
-              + ' A user can only edit or delete their own reviews',
+        flash('You do not own this review and cannot delete it.' +
+              ' A user can only edit or delete their own reviews',
               'warning')
 
         return redirect(url_for('index'))  # sending to log in
@@ -472,7 +474,8 @@ def search():
     ( { "$**": "text" } ) as the index settings
     '''
 
-    # Could not get the search function working in time it was left here so that it can be fixed at a later date
+    # Could not get the search function working in time it was left here so
+    # that it can be fixed at a later date
 
     search = request.args['search']
     category = request.args['category']
@@ -483,9 +486,8 @@ def search():
 
         # pagination section
 
-        total = \
-            mongo.db.reviews.count_documents({'$and': [{'$text': {'$search': search}},
-                {'category': category}]})
+        total = mongo.db.reviews.count_documents(
+            {'$and': [{'$text': {'$search': search}}, {'category': category}]})
 
         # setting the current page of pagination
 
@@ -502,21 +504,21 @@ def search():
 
         find_reviews = \
             mongo.db.reviews.find({'$and': [{'$text': {'$search': search}},
-                                  {'category': category}]}).limit(page_limit).skip(offset)
-        count_doc = \
-            mongo.db.reviews.count_documents({'$and': [{'$text': {'$search': search}},
-                {'category': category}]})
+                                  {'category':
+                                  category}]}).limit(page_limit).skip(offset)
+        count_doc = mongo.db.reviews.count_documents(
+            {'$and': [{'$text': {'$search': search}}, {'category': category}]})
         if count_doc == 0:
 
             # if no records found for category selection and site search
 
-            flash('There are no reviews currently in the "'
-                  + category.title() + '" category using "' + search
-                  + '" as the site search', 'warning')
+            flash('There are no reviews currently in the "' +
+                  category.title() + '" category using "' + search +
+                  '" as the site search', 'warning')
             return redirect(url_for('index'))
 
-        flash('Search Results for "' + search + '" filtered by "'
-              + category.title() + '" category', 'success')
+        flash('Search Results for "' + search + '" filtered by "' +
+              category.title() + '" category', 'success')
 
         return render_template(
             'search.html',
@@ -529,13 +531,13 @@ def search():
             max_pages=max_pages,
             search=search,
             category=category,
-            )
+        )
     elif search == '' and category == 'none':
 
         # checking if user has not entered text into search or used filter
 
-        flash('You have not selected a category or enterd text '
-              + ' the search field', 'warning')
+        flash('You have not selected a category or enterd text ' +
+              ' the search field', 'warning')
         return redirect(url_for('index'))
     elif search == '' and category != 'none':
 
@@ -544,7 +546,8 @@ def search():
         # pagination section
 
         total = \
-            mongo.db.reviews.count_documents({'category': {'$regex': category}})
+            mongo.db.reviews.count_documents(
+                {'category': {'$regex': category}})
 
         # total records in query
 
@@ -563,17 +566,19 @@ def search():
         # searching db for the selected category in filter
 
         find_reviews = \
-            mongo.db.reviews.find({'category': {'$regex': category}}).limit(page_limit).skip(offset)
+            mongo.db.reviews.find({'category': {'$regex': category}}).limit(
+                page_limit).skip(offset)
         count_doc = \
-            mongo.db.reviews.count_documents({'category': {'$regex': category}})
+            mongo.db.reviews.count_documents(
+                {'category': {'$regex': category}})
 
         if count_doc == 0:  # if no records found for category selection
-            flash('There are no reviews currently in the "'
-                  + category.title() + '" category', 'warning')
+            flash('There are no reviews currently in the "' +
+                  category.title() + '" category', 'warning')
             return redirect(url_for('index'))
 
-        flash('Results showing "' + category.title() + '" reviews only '
-              , 'success')
+        flash('Results showing "' + category.title() +
+              '" reviews only ', 'success')
         return render_template(
             'search.html',
             title='Search',
@@ -585,7 +590,7 @@ def search():
             max_pages=max_pages,
             search=search,
             category=category,
-            )
+        )
     elif search != '' and category == 'none':
 
         # checking for just search text entry
@@ -612,18 +617,19 @@ def search():
         # running find on contents of search box using multifield text search
 
         find_reviews = \
-            mongo.db.reviews.find({'$text': {'$search': search}}).limit(page_limit).skip(offset)
+            mongo.db.reviews.find({'$text': {'$search': search}}).limit(
+                page_limit).skip(offset)
         count_doc = \
             mongo.db.reviews.count_documents({'$text': {'$search': search}})
         if count_doc == 0:
 
             # if no records found for site search
 
-            flash('There are no search results for "' + search
-                  + '" in the site search. Please try a different search, or'
+            flash('There are no search results for "' + search +
+                  '" in the site search. Please try a different search, or' +
 
-                  + ' combination of words if using small regular words such '
-                   + 'as "the" or "on"', 'warning')
+                  ' combination of words if using small regular words such ' +
+                  'as "the" or "on"', 'warning')
             return redirect(url_for('index'))
         flash('Search results for "' + search + '"', 'success')
         return render_template(
@@ -637,7 +643,7 @@ def search():
             max_pages=max_pages,
             search=search,
             category=category,
-            )
+        )
 
 
 @app.errorhandler(400)
@@ -695,7 +701,7 @@ def get_icon_class(cat):
         'science': 'fa fa-cogs',
         'sport': 'fa fa-futbol-o',
         'history': 'fa fa-globe',
-        }
+    }
     return icons[cat]  # returning relevant classes
 
 
