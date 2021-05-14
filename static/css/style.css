@@ -1,198 +1,157 @@
-body{
-    font-family: 'Ubuntu', sans-serif;
-    
+body {
+font-family : 'Ubuntu', sans-serif;
 }
-
-.background{
-     background-image: url('../img/background.jpg');
-    background-repeat: no-repeat;
-    width: auto; /*or your image's width*/
-    height: auto; /*or your image's height*/
-    margin: 0;
-    padding: 0;
+.background {
+background-image : url("../img/background.jpg");
+background-repeat : no-repeat;
+width : auto;
+height : auto;
+margin : 0;
+padding : 0;
 }
-.footer{
-    line-height: 1rem;
-    font-size: 1rem;
-    text-align: center;
-    background-color: rgb(0, 0, 0);
-    padding: 1rem;
-    color: rgb(255, 255, 255);
+.footer {
+line-height : 1rem;
+font-size : 1rem;
+text-align : center;
+background-color : rgb(0, 0, 0);
+padding : 1rem;
+color : rgb(255, 255, 255);
 }
-
-/*  nav */
-/* change the nav background color */
 .bg-light {
-    background-color: rgb(0, 0, 0)!important;
-   
+background-color : rgb(0, 0, 0) !important ;
 }
-/* change text color */
-.navbar-light .navbar-brand  {
-    color: rgb(255, 255, 255)
+.navbar-light .navbar-brand {
+color : rgb(255, 255, 255);
 }
-
-.navbar-toggler .navbar-toggler-icon{
-    color: rgb(255, 255, 255);
+.navbar-toggler .navbar-toggler-icon {
+color : rgb(255, 255, 255);
 }
-
-.nav-item{
-    color: rgb(255, 255, 255)!important;
+.nav-item {
+color : rgb(255, 255, 255) !important ;
 }
 .nav-item:hover {
-    color: #000!important;
+color : #000 !important ;
 }
-
-/* page intro */
-
-.jumbotron{
-    background-color: rgb(0, 0, 0);
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: rgb(255, 255, 255);
-    font-weight: bold;
-    border-radius: .5rem;  
+.jumbotron {
+background-color : rgb(0, 0, 0);
+background-repeat : no-repeat;
+background-size : cover;
+color : rgb(255, 255, 255);
+font-weight : bold;
+border-radius : 0.5rem;
 }
-.lead{
-    margin-right: 8%;
+.lead {
+margin-right : 8%;
 }
-
-.searchbar{
-   
-    background: transparent;
-    border-radius: .5rem;
-    color: rgb(102, 102, 102); 
-    font-weight: bold;   
+.searchbar {
+background : transparent;
+border-radius : 0.5rem;
+color : rgb(102, 102, 102);
+font-weight : bold;
 }
-.searchbutton{
-    opacity: .7;
-    border-radius: .3rem;    
+.searchbutton {
+opacity : 0.7;
+border-radius : 0.3rem;
 }
-
-/* card styling */
-.card{
-    color: rgb(133, 133, 133);
-    font-size: 1rem;
-    border-color: rgb(0, 0, 0);
-    border-radius: .5rem;
+.card {
+color : rgb(133, 133, 133);
+font-size : 1rem;
+border-color : rgb(0, 0, 0);
+border-radius : 0.5rem;
 }
-.card-header{
-    border-color: rgb(104, 104, 104);
-    background-color: rgb(0, 0, 0);
+.card-header {
+border-color : rgb(104, 104, 104);
+background-color : rgb(0, 0, 0);
 }
-.review-title{
-    color: rgb(255, 255, 255),;
-
+.btn-info {
+background-color : rgb(0, 0, 0);
 }
-.btn-info{
-    background-color: rgb(0, 0, 0);
-}
-.btn{
-    border-color: rgb(255, 255, 255);
-    font-size: .75rem;
-    border-radius: .5rem
+.btn {
+border-color : rgb(255, 255, 255);
+font-size : 0.75rem;
+border-radius : 0.5rem;
 }
 .btn:hover {
-    background-color: rgb(0, 0, 0);
-    border-color: rgb(0, 0, 0);
+background-color : rgb(0, 0, 0);
+border-color : rgb(0, 0, 0);
 }
-hr{
-    border-color: rgb(7, 7, 7);
+hr {
+border-color : rgb(7, 7, 7);
 }
 .fa {
-    color: rgb(255, 255, 255);
-    font-size: 1.5rem;
+color : rgb(255, 255, 255);
+font-size : 1.5rem;
 }
-.fa-search{
-    color: rgb(0, 0, 0);
-    font-size: 1rem;
+.fa-search {
+color : rgb(0, 0, 0);
+font-size : 1rem;
 }
-.fa-user-circle{
-    color: rgb(0, 0, 0);
-    font-size: 1rem;
+.fa-user-circle {
+color : rgb(0, 0, 0);
+font-size : 1rem;
 }
-.upvote{
-    color: rgb(0, 0, 0);
-    font-size: 1rem;
-    margin-top: .5rem;
+.upvote {
+color : rgb(0, 0, 0);
+font-size : 1rem;
+margin-top : 0.5rem;
 }
-.amazon{
-    font-size: .75rem;
+.amazon {
+font-size : 0.75rem;
 }
-
-/* Pagination links  */
 .pagination-sm .page-item:last-child .page-link {
-    border-top-right-radius: .5rem;
-    border-bottom-right-radius: .5rem;
+border-top-right-radius : 0.5rem;
+border-bottom-right-radius : 0.5rem;
 }
 .pagination-sm .page-item:first-child .page-link {
-    border-top-left-radius: .5rem;
-    border-bottom-left-radius: .5rem;
+border-top-left-radius : 0.5rem;
+border-bottom-left-radius : 0.5rem;
 }
-
-/* delete modal */
-.modal-content{
-    color: rgb(0, 0, 0);
-    background-color: rgb(0, 0, 0);
-    border-radius: .5rem;
+.modal-content {
+color : rgb(0, 0, 0);
+background-color : rgb(0, 0, 0);
+border-radius : 0.5rem;
 }
-.modal-header{
-    border-bottom-color: rgb(255, 255, 255);
+.modal-header {
+border-bottom-color : rgb(255, 255, 255);
 }
-.modal-footer{
-    border-top-color: rgb(0, 0, 0);
+.modal-footer {
+border-top-color : rgb(0, 0, 0);
 }
-
-/* error pages */
-
-.error-header{
-    font-size: 5rem;
-    font-weight: bold;
-    color: rgb(8, 8, 8);
+.error-header {
+font-size : 5rem;
+font-weight : bold;
+color : rgb(8, 8, 8);
 }
-.error-content{
-    font-size: 1.2em;
-    font-weight: bold;
-    color: rgb(0, 0, 0);
+.error-content {
+font-size : 1.2em;
+font-weight : bold;
+color : rgb(0, 0, 0);
 }
-.other-error-content{
-    font-size: 2em;
-    font-weight: bold;
-    color: rgb(0, 0, 0);
+.other-error-content {
+font-size : 2em;
+font-weight : bold;
+color : rgb(0, 0, 0);
 }
-
-.col-sm-6{
-    border-radius: 50%;
+.col-sm-6 {
+border-radius : 50%;
 }
-
-/* about page */
-
-.about-header{
-    font-size: 2rem;
-    font-weight: bold;
-    color: rgb(255, 255, 255);
+.about-header {
+font-size : 2rem;
+font-weight : bold;
+color : rgb(255, 255, 255);
 }
-.about-content{
-    font-size: 1rem;
-    font-weight: bold;
-    color: rgb(255, 248, 248);
+.about-content {
+font-size : 1rem;
+font-weight : bold;
+color : rgb(255, 248, 248);
 }
-
-
-/* media queries */
-
-@media (min-width: 576px) { 
-    .lead{
-        margin-right: 25%;
-    }
- }
-
-@media (min-width: 768px) { 
-    .lead{
-        margin-right: 33%;
-    }
- }
-
-
-
-
-
+@media (min-width: 576px) {
+.lead {
+margin-right : 25%;
+}
+}
+@media (min-width: 768px) {
+.lead {
+margin-right : 33%;
+}
+}
