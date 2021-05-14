@@ -47,6 +47,6 @@ class ReviewForm(FlaskForm):
         ('nature', 'Nature'),
         ('science', 'Science'),
         ('sport', 'Sport'),
-        ])
+    ])
     submit_add = SubmitField('Add Review')
     submit_edit = SubmitField('Update Review')
